@@ -1,15 +1,16 @@
-const Board = ({ board }) => {
+function Board (props) {
   return (
-    <div className="board">
-      {board.map((row, rowIndex) => (
-        <div key={rowIndex} className="board-row">
-          {row.map((cell, cellIndex) => (
-            <div key={cellIndex} className={`board-cell ${cell}`} />
-          ))}
-        </div>
-      ))}
+    <div>
+      {props.board.map(
+        row => row.map(
+          (type,i) =>
+          <div key={i} className={"cell"}>
+            {type}
+          </div>
+        )
+      )}
     </div>
   );
-};
+}
 
 export default Board;
